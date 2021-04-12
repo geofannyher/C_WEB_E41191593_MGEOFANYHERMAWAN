@@ -22,3 +22,10 @@ Route::get('/show',[ManagementUserController::class, 'show']);
 Route::get('/edit',[ManagementUserController::class, 'edit']);
 Route::get('/update',[ManagementUserController::class, 'update']);
 Route::get('/destroy',[ManagementUserController::class, 'destroy']);
+
+Route::get("/home",function(){
+    return view("home");
+});
+Route::group(['namespace' => 'frontend'], function(){
+    Route::resource('home', 'HomeController');
+});
